@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <section class="section">
     <h2 class="is-size-3">{{ job.title }}</h2>
     {{ job.description }}
-  </div>
+  </section>
 </template>
 
 <script>
