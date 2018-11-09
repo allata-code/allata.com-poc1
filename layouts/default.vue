@@ -9,16 +9,10 @@
           class="navbar-item"
           href="/">
           <img
-            src="~assets/buefy.png"
-            alt="Buefy"
+            src="logo.png"
+            alt="Allata"
             height="28">
         </a>
-
-        <div class="navbar-burger">
-          <span/>
-          <span/>
-          <span/>
-        </div>
       </div>
     </nav>
 

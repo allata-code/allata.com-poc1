@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1 class="is-size-1">Work at allata!</h1>
+  <section class="section">
+    <h1 class="is-size-1">Work at Allata!</h1>
     <div
       v-for="(job, slug) in $store.state.jobs"
       :key="slug"
@@ -12,7 +12,7 @@
         <h2 class="is-size-4">{{ job.title }}</h2>
       </nuxt-link>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
