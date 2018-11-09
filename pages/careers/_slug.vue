@@ -8,10 +8,10 @@
 <script>
   export default {
     name: "Career",
+    async asyncData ({ store, params }) {
+      return { job: store.state.jobs[params.slug]}
+    },
     computed: {
-      job() {
-        return this.$store.state.jobs[this.$route.params.slug]
-      }
     }
   }
 </script>
