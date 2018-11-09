@@ -5,14 +5,14 @@
       role="navigation"
       aria-label="main navigation">
       <div class="navbar-brand">
-        <a
+        <nuxt-link
           class="navbar-item"
-          href="/">
+          to="/">
           <img
             src="logo.png"
             alt="Allata"
             height="28">
-        </a>
+        </nuxt-link>
       </div>
     </nav>
 
