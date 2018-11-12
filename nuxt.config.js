@@ -27,6 +27,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    { src: '@/assets/css/main.scss', lang: 'sass' }
   ],
 
   /*

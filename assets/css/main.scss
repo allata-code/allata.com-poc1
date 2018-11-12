@@ -1,0 +1,9 @@
+@import "allata-colors";
+
+/* See https://bulma.io/documentation/customize/variables/ for full enumeration of variables*/
+$primary: $allata-purple;
+$link: $allata-pink;
+
+@import "~bulma/sass/utilities/_all";
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
