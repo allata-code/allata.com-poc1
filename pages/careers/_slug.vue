@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <h2 class="is-size-3">{{ job.title }}</h2>
+    <h2 class="is-size-2">{{ job.title }}</h2>
     {{ job.description }}
   </section>
 </template>

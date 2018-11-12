@@ -47,7 +47,8 @@ export default {
     return {
       items: [
         { title: 'Home', icon: 'home', to: { name: 'index' } },
-        { title: 'Careers', icon: 'timelapse', to: { name: 'careers' } }
+        { title: 'Careers', icon: 'timelapse', to: { name: 'careers' } },
+        { title: 'Blog', icon: 'folder', to: { name: 'blog' } }
       ]
     }
   }
