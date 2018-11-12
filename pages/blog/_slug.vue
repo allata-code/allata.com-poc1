@@ -9,6 +9,11 @@
 <script>
   export default {
     name: "BlogPost",
+    head () {
+      return {
+        titleTemplate: '%s Blog - ' + this.post.title,
+      }
+    },
     async asyncData({store, params}) {
       return {post: store.getters.post(params.slug)}
     },

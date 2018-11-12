@@ -4,6 +4,14 @@
 $primary: $allata-purple;
 $link: $allata-pink;
 
+/* Page Transitions */
+.page-enter-active, .page-leave-active {
+  transition: opacity 50ms;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
+
 @import "~bulma/sass/utilities/_all";
 @import "~bulma";
 @import "~buefy/src/scss/buefy";

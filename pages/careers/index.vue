@@ -17,7 +17,12 @@
 
 <script>
   export default {
-    name: "Careers"
+    name: "Careers",
+    head () {
+      return {
+        titleTemplate: '%s Careers',
+      }
+    }
   }
 </script>
 

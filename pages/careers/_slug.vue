@@ -8,6 +8,11 @@
 <script>
   export default {
     name: "Career",
+    head () {
+      return {
+        titleTemplate: '%s Careers - ' + this.job.title,
+      }
+    },
     async asyncData ({ store, params }) {
       return { job: store.state.jobs[params.slug]}
     },

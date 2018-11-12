@@ -18,7 +18,12 @@
 
 <script>
   export default {
-    name: "BlogIndex"
+    name: "BlogIndex",
+    head () {
+      return {
+        titleTemplate: '%s Blog',
+      }
+    }
   }
 </script>
 

@@ -51,6 +51,11 @@ export default {
         { title: 'Blog', icon: 'folder', to: { name: 'blog' } }
       ]
     }
+  },
+  head () {
+    return {
+      title: 'Allata',
+    }
   }
 }
 </script>
