@@ -1,16 +1,5 @@
 import Vuex from 'vuex'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-
-
-const contentful = require('contentful');
-// import blogService from './services/blogService'
-
-
-const contentfulClient = contentful.createClient({
-  space: process.env.CTF_SPACE_ID || 'zfhd3udeelb4',
-  accessToken: process.env.CTF_CDA_ACCESS_TOKEN || '742780729f80194b5e3d9cf5d80cffa2fdbaef077f91229463395e032248718e'
-});
-
+import blogService from './services/blogService';
 
 const createStore = () => {
   return new Vuex.Store({
@@ -46,14 +35,7 @@ const createStore = () => {
     },
     actions: {
       loadBlogPosts(context) {
-        contentfulClient.getEntries({
-          content_type: 'blog',
-          'fields.publishDate[lt]': (new Date())
-        })
-          .then(posts => context.commit('setBlogPosts', posts.items.map(p =>
-            Object.assign({html: documentToHtmlString(p.fields.body)}, p.fields)
-          )))
-          .catch(err => console.error(err));
+        blogService.getAllPosts().then(posts => context.commit('setBlogPosts', posts))
       }
     },
     getters: {
