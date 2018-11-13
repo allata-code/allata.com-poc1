@@ -11,7 +11,8 @@
         exact-active-class="is-active">
         <h2 class="is-size-4">{{ post.title }}</h2>
       </nuxt-link>
-      <div class="">{{ post.author }} ({{ post.publishDate }})</div>
+      <div class="">{{ post.description }}</div>
+      <div class="">{{ post.author.fields.name }}</div>
     </div>
   </section>
 </template>

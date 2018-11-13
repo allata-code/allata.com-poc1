@@ -1,15 +1,24 @@
 <template>
   <section class="section">
     <h2 class="is-size-2">{{ post.title }}</h2>
-    {{ post.author }}
-    <div v-html="post.html"/>
+    {{ post.author.fields.name }}
+
+    <div class="tags">
+      <span
+        v-for="tag in post.tags"
+        :key="tag"
+        class="tag">
+        {{ tag }}
+      </span>
+    </div>
+    <div>{{ post.body }}</div>
   </section>
 </template>
 
 <script>
   export default {
     name: "BlogPost",
-    head () {
+    head() {
       return {
         titleTemplate: '%s Blog - ' + this.post.title,
       }
