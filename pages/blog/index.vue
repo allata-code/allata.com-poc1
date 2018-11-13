@@ -5,21 +5,16 @@
       v-for="post in $store.getters.blogPosts(0)"
       :key="post.slug"
     >
-
-      <nuxt-link
-        :to="{ name: 'blog-slug', params: { slug: post.slug }}"
-        exact-active-class="is-active">
-        <h2 class="is-size-4">{{ post.title }}</h2>
-      </nuxt-link>
-      <div class="">{{ post.description }}</div>
-      <div class="">{{ post.author.fields.name }}</div>
+      <blog-list-item :post="post"/>
     </div>
   </section>
 </template>
 
 <script>
+  import BlogListItem from "@/components/BlogListItem"
   export default {
     name: "BlogIndex",
+    components: {BlogListItem},
     head () {
       return {
         titleTemplate: '%s Blog',

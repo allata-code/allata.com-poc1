@@ -1,5 +1,6 @@
 import Vuex from 'vuex'
 import blogService from './services/blogService';
+import {flatten, uniq} from 'lodash'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -41,6 +42,12 @@ const createStore = () => {
     getters: {
       blogPosts: (state) => (page) => {
         return state.posts.slice(Math.min(page * state.blogPageSize, state.posts.length), Math.min((page * state.blogPageSize) + 10, state.posts.length));
+      },
+      blogPostsByTag: (state) => (tag) => {
+        return state.posts.filter(post => post.tags.indexOf(tag) >= 0)
+      },
+      blogTags: (state) => {
+        return uniq(flatten(state.posts.map(p => p.tags)))
       },
       post: (state) => (slug) => {
         return state.posts.find(post => post.slug === slug)
