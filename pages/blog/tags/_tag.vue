@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <h2 class="is-size-2">{{ $route.params.tag }}</h2>
+    <h2 class="is-size-2">Blog posts tagged with <i>{{ $route.params.tag }}</i></h2>
     <div
       v-for="post in posts"
       :key="post.slug"

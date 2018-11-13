@@ -2,12 +2,8 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'spa',
-
-  /*
-  ** Headers of the page
-  */
   head: {
-    title: pkg.name,
+    title: 'Allata',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,48 +13,24 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
-  /*
-  ** Customize the progress-bar color
-  */
+  env: {
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN
+  },
   loading: { color: '#fff' },
-
-  /*
-  ** Global CSS
-  */
   css: [
     { src: '@/assets/css/main.scss', lang: 'sass' }
   ],
-
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
   ],
-
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
-    // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy'
   ],
-  /*
-  ** Axios module configuration
-  */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
-  /*
-  ** Build configuration
-  */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {

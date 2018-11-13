@@ -4,6 +4,12 @@
 
 ## Build Setup
 
+#### Environment Vars
+Allata.com requires the following env vars setup when running locally or generating static site:
+`CTF_SPACE_ID`: Space Id for Contentful
+`CTF_CDA_ACCESS_TOKEN`: Access token for the Contentful space
+
+
 ``` bash
 # install dependencies
 $ yarn install
