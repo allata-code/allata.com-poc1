@@ -2,7 +2,7 @@
   <section class="section">
     <h2 class="is-size-2">{{ post.title }}</h2>
     {{ post.author }}
-    <div v-html="post.body"/>
+    <div v-html="post.html"/>
   </section>
 </template>
 

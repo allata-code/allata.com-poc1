@@ -11,7 +11,7 @@
         exact-active-class="is-active">
         <h2 class="is-size-4">{{ post.title }}</h2>
       </nuxt-link>
-      <div class="">{{ post.author }} ({{ post.postDate }})</div>
+      <div class="">{{ post.author }} ({{ post.publishDate }})</div>
     </div>
   </section>
 </template>
@@ -23,6 +23,9 @@
       return {
         titleTemplate: '%s Blog',
       }
+    },
+    async asyncData({store}) {
+      await store.dispatch('loadBlogPosts')
     }
   }
 </script>

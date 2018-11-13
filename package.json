@@ -13,14 +13,16 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^10.0.1",
     "@nuxtjs/axios": "^5.0.0",
+    "contentful": "^7.0.5",
     "cross-env": "^5.2.0",
+    "node-sass": "^4.10.0",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.2.1",
     "nuxt-sass-resources-loader": "^2.0.5",
     "sass-loader": "^7.1.0",
-    "vue-style-loader": "^4.1.2",
-    "node-sass": "^4.10.0"
+    "vue-style-loader": "^4.1.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
