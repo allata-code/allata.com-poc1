@@ -14,7 +14,7 @@
       }
     },
     async asyncData ({ store, params }) {
-      return { job: store.state.jobs[params.slug]}
+      return { job: store.getters['career/jobs'][params.slug]}
     },
     computed: {
     }

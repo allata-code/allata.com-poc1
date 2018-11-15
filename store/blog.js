@@ -1,5 +1,8 @@
-import blogService from './services/blogService';
 import {flatten, uniq} from 'lodash'
+import contentful from './services/contentfulClient';
+import {markdown} from 'markdown';
+
+const client = contentful.createClient();
 
 export const state = () => ({
   blogPageSize: 10,
@@ -16,7 +19,17 @@ export const actions = {
     if (state.posts.length) {
       return;
     }
-    blogService.getAllPosts().then(posts => commit('setBlogPosts', posts))
+
+    console.log('state', state);
+    client.getEntries({
+      content_type: 'blogPost',
+      include: 2
+      // 'fields.publishDate[lt]': (new Date())
+    }).then(posts => commit('setBlogPosts',
+      posts.items.map(p => Object.assign({html: markdown.toHTML(p.fields.body)}, p.fields)))
+    ).catch(err => {
+      console.error(err);
+    });
   }
 };
 export const getters = {

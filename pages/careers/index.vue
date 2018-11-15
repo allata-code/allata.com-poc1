@@ -2,7 +2,7 @@
   <section class="section">
     <h1 class="is-size-2">Work at Allata!</h1>
     <div
-      v-for="(job, slug) in $store.state.jobs"
+      v-for="(job, slug) in $store.getters['career/jobs']"
       :key="slug"
     >
 
