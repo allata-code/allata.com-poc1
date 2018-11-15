@@ -2,7 +2,7 @@
   <section class="section">
     <h1 class="is-size-2">Blog</h1>
     <div
-      v-for="post in $store.getters.blogPosts(0)"
+      v-for="post in $store.getters['blog/blogPosts'](0)"
       :key="post.slug"
     >
       <blog-list-item :post="post"/>
@@ -20,8 +20,8 @@
         titleTemplate: '%s Blog',
       }
     },
-    async asyncData({store}) {
-      await store.dispatch('loadBlogPosts')
+    async fetch({store}) {
+      return await store.dispatch('blog/loadBlogPosts')
     }
   }
 </script>

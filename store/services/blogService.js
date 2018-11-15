@@ -1,5 +1,5 @@
 import contentful from './contentfulClient';
-import {documentToHtmlString} from '@contentful/rich-text-html-renderer';
+import {markdown} from 'markdown';
 
 const client = contentful.createClient();
 
@@ -13,8 +13,7 @@ export default {
       })
         .then(posts =>
           resolve(posts.items.map(p =>
-            // Object.assign({html: documentToHtmlString(p.fields.body)}, p.fields)
-            p.fields
+            Object.assign({html: markdown.toHTML(p.fields.body)}, p.fields)
           )))
         .catch(err => {
           console.error(err);

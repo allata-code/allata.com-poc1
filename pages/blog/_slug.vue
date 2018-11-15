@@ -12,7 +12,7 @@
         <a class="has-link tag">{{ tag }}</a>
       </nuxt-link>
     </div>
-    <div>{{ post.body }}</div>
+    <div v-html="post.html"/>
   </section>
 </template>
 
@@ -25,7 +25,7 @@
       }
     },
     async asyncData({store, params}) {
-      return {post: store.getters.post(params.slug)}
+      return {post: store.getters['blog/post'](params.slug)}
     },
     computed: {}
   }

@@ -21,7 +21,7 @@
       }
     },
     async asyncData({store, params}) {
-      return {posts: store.getters.blogPostsByTag(params.tag)};
+      return {posts: store.getters['blog/blogPostsByTag'](params.tag)};
     },
     computed: {}
   }

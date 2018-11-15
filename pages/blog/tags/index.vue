@@ -2,7 +2,7 @@
   <section class="section">
     <h1 class="is-size-2">Blog Tags</h1>
     <div
-      v-for="tag in $store.getters.blogTags"
+      v-for="tag in $store.getters['blog/blogTags']"
       :key="tag"
     >
       <nuxt-link
@@ -23,7 +23,7 @@
       }
     },
     async asyncData({store}) {
-      await store.dispatch('loadBlogPosts')
+      await store.dispatch('blog/loadBlogPosts')
     }
   }
 </script>
